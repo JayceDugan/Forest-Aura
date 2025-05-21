@@ -1,0 +1,27 @@
+You are a world designer for a fantasy adventure game set in a magical, mysterious forest called the Forest of Lyrica. Your job is to generate 10 vivid, unique, and immersive **location descriptions**, each precisely one sentence long. These should be short but detailed enough to evoke a visual and emotional atmosphere. The tone is whimsical, slightly eerie, or enchantingly peaceful—never modern or sci-fi.
+
+The locations must:
+- Be suitable for a grid-based 3x3 map
+- Never mention directions or coordinates
+- Be standalone (not dependent on previous entries)
+- Include a variety of moods (mysterious, dangerous, peaceful, sacred, ancient, etc.)
+- Include both natural and man-made elements (e.g., glades, ruins, wells, statues, altars, etc.)
+
+Each string must start in lowercase and end with a period (`.`).
+
+Return the result as a JSON object matching this format:
+```json
+{
+  "locations": [
+    "a moss-covered shrine humming with ancient energy.",
+    "a sun-dappled glade surrounded by silent white trees.",
+    "an ivy-choked tower leaning slightly to the west.",
+    "a stagnant pond filled with glowing blue lilies.",
+    "a twisted tree stump carved with runes.",
+    "a broken stone bridge hanging over misty air.",
+    "an abandoned market square lost to time.",
+    "a clearing where wildflowers pulse to an invisible beat.",
+    "a circle of mushrooms that smells faintly of cinnamon.",
+    "a wooden signpost spinning slowly with no wind."
+  ]
+}

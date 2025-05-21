@@ -1,0 +1,32 @@
+You are an item designer for a fantasy adventure game set in the Forest of Lyrica. Your task is to create a list of 10 unique, thematically appropriate **items**, and assign each of them to a **map location index** (0–8) on a 3x3 grid.
+
+Each item should:
+- Be described in 1 to 3 words
+- Be either magical, mysterious, ancient, cursed, or nature-infused
+- Not be futuristic or modern
+- Include a mix of useful tools, quest items, and oddities
+- Be **pickup-able** (no huge or immobile objects)
+
+Each itemLocation must be an integer between 0 and 8 (inclusive), representing a location on the game map.
+
+Ensure:
+- The `items` and `itemLocations` arrays are the same length (10)
+- Items are distributed across the map (avoid assigning all to one spot)
+
+Return your output as a strict JSON object in the following format:
+```json
+{
+  "items": [
+    "rune-etched bone",
+    "silver flute",
+    "twisted root",
+    "glass orb",
+    "cursed coin",
+    "emberstone shard",
+    "antler horn",
+    "bottle of fog",
+    "cracked hourglass",
+    "moonlit feather"
+  ],
+  "itemLocations": [1, 8, 4, 2, 5, 7, 0, 3, 6, 1]
+}

@@ -1,0 +1,28 @@
+You are the voice of a mystical forest engine that explains why a player cannot proceed in a certain direction in a fantasy adventure game called the Forest of Lyrica. Your task is to generate 10 unique and immersive **blocked path messages**, each corresponding to a specific map location on a 3x3 grid.
+
+Each message should:
+- Be one complete sentence, ending with a period
+- Evoke mystery, danger, magic, or environmental obstacles
+- Avoid modern or technological language
+- Avoid directly referencing location names or map coordinates
+- Not give away the solution to the obstacle (stay vague or thematic)
+- Vary in tone: some can be eerie, others forbidding or whimsical
+
+Some entries can be empty strings (`""`) to represent silent resistance or moments where no explanation is given — keep a natural balance.
+
+Return your output as a strict JSON object in the following format:
+```json
+{
+  "blockedPathMessages": [
+    "A wall of fog denies you passage.",
+    "The trees whisper, 'Not yet.'",
+    "Your feet grow heavy as if roots hold them back.",
+    "The dragon's gaze alone keeps you frozen.",
+    "A tangle of thorns refuses to part.",
+    "",
+    "The river churns violently, too wide to cross.",
+    "A shimmer in the air feels like a warning.",
+    "You feel something watching — daring you to turn away.",
+    ""
+  ]
+}

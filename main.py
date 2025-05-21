@@ -1,53 +1,16 @@
-#FOREST OF LYRICA
-#New in this version
-#Add context specific hints
+from game_generator import generateLocations, generateItems, generateBlockedPaths, generateHints
 
-#create the map
-forestMap=[]
+print("Setting up...");
 
-forestMap.append("an old stone keep.")
-forestMap.append("a deep well.")
-forestMap.append("a sunny glade.")
-forestMap.append("a sleeping dragon.")
-forestMap.append("a narrow pathway.")
-forestMap.append("an ancient gate.")
-forestMap.append("the edge of a river.")
-forestMap.append("a lonely wooden bench.")
-forestMap.append("an isolated cottage. Faint music comes from inside.")
+forestMap = generateLocations()
+blockedPathMessages = generateBlockedPaths()
+hints = generateHints()
+items, itemLocations = generateItems()
 
-#create a list of blocked path messages
-blockedPathMessages = []
+print("Setup complete")
 
-blockedPathMessages.append("It's too dangerous to go that way.")
-blockedPathMessages.append("A mysterious force holds you back.")
-blockedPathMessages.append("A tangle of thorns blocks your way.")
-blockedPathMessages.append("You can't step over the dragon.")
-blockedPathMessages.append("")
-blockedPathMessages.append("The gate locks shut.")
-blockedPathMessages.append("The river is too deep to cross.")
-blockedPathMessages.append("The trees are too thick to pass.")
-blockedPathMessages.append("You're too scared to go that way.")
-
-#create a list of hints
-hints = []
-
-hints.append("")
-hints.append("I wonder if you could 'use' something to find out how deep the well is?")
-hints.append("")
-hints.append("Maybe if you had a sword, you could slay the dragon?")
-hints.append("")
-hints.append("")
-hints.append("")
-hints.append("")
-hints.append("This seems like a nice place for music.")
-
-
-#set the player's start location
+# set the player's start location
 mapLoc = 4
-
-#set up a list of items and their location on the map
-items=["stone"]
-itemLocations=[6]
 
 #initialise game variables
 playerInput=""
@@ -258,8 +221,6 @@ def playGame():
         else:
             gameMessage = "Error: This action is still in development"
         
-   
-
 def describeLocation():
     print("You can see",forestMap[mapLoc])
     for i in range(len(itemLocations)):
@@ -268,7 +229,9 @@ def describeLocation():
     
     
 print("Welcome to the Forest of Lyrica")
+print("Here are a list of actions you may use: ", actionsIKnow);
 print("You can see",forestMap[mapLoc])
+
 while not endGame:
     playGame()
     if gameMessage:
