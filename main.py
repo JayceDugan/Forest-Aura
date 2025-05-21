@@ -1,13 +1,13 @@
 from game_generator import generateLocations, generateItems, generateBlockedPaths, generateHints
 
-print("Setting up...");
+print("Setting up... \n");
 
 forestMap = generateLocations()
 blockedPathMessages = generateBlockedPaths()
 hints = generateHints()
 items, itemLocations = generateItems()
 
-print("Setup complete")
+print("\n Setup complete! \n\n")
 
 # set the player's start location
 mapLoc = 4
@@ -174,7 +174,7 @@ def playGame():
             else:
                 gameMessage = blockedPathMessages[mapLoc]
         elif action == 'q':
-            gameMessage = "Goodbye"
+            gameMessage = "\nYou have escaped the forest of Lyrica!"
             endGame=True
         elif action == 'use':
             if itemCount==1:
@@ -228,9 +228,25 @@ def describeLocation():
             print("You see a",items[i],"here.")
     
     
-print("Welcome to the Forest of Lyrica")
-print("Here are a list of actions you may use: ", actionsIKnow);
-print("You can see",forestMap[mapLoc])
+print("Welcome to the Forest of Lyrica!")
+print("\n\nHere are all the locations you can discover!\n")
+
+for loc in forestMap:
+    print(" -", loc)
+
+print("\n\nHere are all the items you can find! \n")
+
+for item in items:
+    print(" -", item)
+
+print("\n\nYou can currently see", forestMap[mapLoc])
+
+print("\n\nLet's play! Here are a list of actions you can take:");
+
+for action in actionsIKnow:
+    print(" -", action)
+
+print("\n")
 
 while not endGame:
     playGame()
